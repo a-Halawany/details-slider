@@ -1,0 +1,35 @@
+<!---------------------------- COLUMN 1 --------------------------->
+<div class="container px-3 d-flex flex-column justify-content-center align-items-center justify-content-xl-start align-items-xl-start    ">
+
+  <div class="row justify-content-xxl-start justify-content-center">
+    <div class="col-1 align-self-start carousel-container">
+      <p-carousel [class]="'d-none d-sm-flex'" [style]="{'align-items':'center'}" [value]="bags" [numVisible]="4" verticalViewPortHeight="480px" [numScroll]="1" orientation="vertical" [showIndicators]="false">
+        <ng-template let-bag pTemplate="item">
+          <img style=" width: 78px; border: 2px solid rgba(128,128,128,0.2);border-radius: 0.5em;" (click)="onClick($event)" class="product-image" src="{{bag.image}}">
+        </ng-template>
+      </p-carousel>
+    </div>
+
+    <p-carousel [class]="'d-flex d-sm-none align-items-center justify-content-center'" [style]="{'max-width': '250px','min-width': '150px'}" [indicatorStyle]="{'width': '8px','height':'8px', 'border-radius':'25px'}" [value]="bags" [autoplayInterval]="20000" [numVisible]="1" [numScroll]="1" [showNavigators]="false" [circular]="false">
+      <ng-template let-bag pTemplate="item">
+        <div class="product-item">
+          <div class="product-item-content">
+            <div style="max-width: 250px; min-width: 150px;" class="mb-3">
+              <img style="max-width: 250px; min-width: 150px;" src="{{bag.image}}" class="product-image" />
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+
+    <div class="d-none d-sm-flex col-xxl-3 overflow-hidden magnifier-container">
+      <ng-img-magnifier class="photo-container" [thumbImage]="image" [fullImage]="image"
+    [top]="'6'" [right]="'40.5'"
+    [resultWidth]="'20'" [resultHeight]="'50'"
+    [imgWidth]="'380'" [imgHeight]="'517'">
+      </ng-img-magnifier>
+    </div>
+
+
+  </div>
+</div>
